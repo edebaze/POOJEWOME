@@ -7,20 +7,31 @@
  */
 
 namespace Application\Controller;
+use Core\Controller\AppController;
 
-
-class NewsController {
+class NewsController extends AppController {
 
             public function indexAction() {
-                echo 'je suis index action';
+                $this->render('news/index', [
+                    'titre' => 'Webforce 3 Rouen !'
+                ]);
             }
 
             public function categorieAction() {
-                echo 'je suis categorie action';
+                $this->render('news/categorie', [
+                    'titre' => 'Categories !'
+                ]);
             }
 
             public function articleAction() {
-                echo 'je suis article action';
+                $this->render('news/article', [
+                    'titre' => 'Articles !'
+                ]);
             }
 
+            /*
+            public function action($action = 'index') {
+                 $this->render('news/' . $action);
+            }
+            */
 }

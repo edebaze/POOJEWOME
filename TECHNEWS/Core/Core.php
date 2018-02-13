@@ -24,12 +24,8 @@
                         echo 'Aucune action ne correspond';
                     endif;
                 else :
-                    echo '<h1> Ce controller n\'existe pas</h1>';
+                    echo '<h1> Ce controller n\'existe pas </h1>';
                 endif;
-
-                if($controller == 'news' && $action == 'index') {
-                    echo '<h1> JE SUIS LA PAGE D\'ACCUEIL </h1>';
-                }
             }
     
     }
