@@ -2,7 +2,9 @@
 
     namespace Core;
 
-    class Core {
+    use Core\Controller\AppController;
+
+    class Core extends AppController {
        
             public function __construct($params) {
                 #print_r($params);
@@ -21,10 +23,14 @@
                     if(method_exists($obj, $action)) :
                         $obj->$action();
                     else :
-                        echo 'Aucune action ne correspond';
+                        $this->render('news/404Error', [
+                            'message' => '404 Not Found !'
+                        ]);
                     endif;
                 else :
-                    echo '<h1> Ce controller n\'existe pas </h1>';
+                    $this->render('news/404Error', [
+                        'message' => '404 Not Found !'
+                    ]);
                 endif;
             }
     

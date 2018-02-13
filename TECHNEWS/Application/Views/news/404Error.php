@@ -1,0 +1,1 @@
+<h1><?= isset($message) ? $message : '404 ERROR' ?></h1>

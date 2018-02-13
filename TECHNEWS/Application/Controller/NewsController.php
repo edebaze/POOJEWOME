@@ -7,13 +7,20 @@
  */
 
 namespace Application\Controller;
+use Application\Model\Categorie\CategorieDb;
 use Core\Controller\AppController;
 
 class NewsController extends AppController {
 
             public function indexAction() {
+                # Connexion à la BDD
+                $categorieDb = new CategorieDb;
+                $categorie = $categorieDb->fetchAll();
+
+                # Affichage de la vue
                 $this->render('news/index', [
-                    'titre' => 'Webforce 3 Rouen !'
+                    'titre' => 'Webforce 3 Rouen !',
+                    'categorie' => $categorie
                 ]);
             }
 
